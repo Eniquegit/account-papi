@@ -1,0 +1,42 @@
+{
+  "configs": [
+    "SFDCaccount.xml",
+    "DBaccount_papi.xml"
+  ],
+  "secureProperties": [],
+  "redeploymentEnabled": true,
+  "name": "com.mycompany:account_papi:1.0.0-SNAPSHOT",
+  "minMuleVersion": "4.4.0",
+  "requiredProduct": "MULE_EE",
+  "classLoaderModelLoaderDescriptor": {
+    "id": "mule",
+    "attributes": {
+      "exportedPackages": [],
+      "exportedResources": [
+        "api/DataType/DBdataType.raml",
+        "api/DataType/salesforcedataType.raml",
+        "api/DataType/SFAddressdataType.raml",
+        "api/DataType/SFBillToContactdataType.raml",
+        "api/DataType/SFCardHolderInfodataType.raml",
+        "api/DataType/SFNamedataType.raml",
+        "api/DataType/SFPaymentMethoddataType.raml",
+        "api/DBaccount_papi.raml",
+        "api/Examples/getDB.raml",
+        "api/Examples/getSFDC.json",
+        "api/Examples/postDB.raml",
+        "api/Examples/postSFDC.json",
+        "api/Examples/putDB.raml",
+        "api/Examples/putSFDC.json",
+        "api/SFDCaccount.raml",
+        "application-types.xml",
+        "DBaccount_papi.xml",
+        "log4j2.xml",
+        "SFDCaccount.xml"
+      ]
+    }
+  },
+  "bundleDescriptorLoader": {
+    "id": "mule",
+    "attributes": {}
+  }
+}
