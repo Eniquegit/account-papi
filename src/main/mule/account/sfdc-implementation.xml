@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:http="http://www.mulesoft.org/schema/mule/http" xmlns:ee="http://www.mulesoft.org/schema/mule/ee/core"
+	xmlns="http://www.mulesoft.org/schema/mule/core"
+	xmlns:doc="http://www.mulesoft.org/schema/mule/documentation" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+http://www.mulesoft.org/schema/mule/ee/core http://www.mulesoft.org/schema/mule/ee/core/current/mule-ee.xsd
+http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd">
+	<configuration-properties doc:name="Configuration properties" doc:id="e4cf0e1b-fbe6-47e6-ba8d-5ab6f7883217" file="stagging.properties" />
+	<flow name="patch-implementationFlow" doc:id="55e15047-c6dd-4cd3-aed9-192592495a2d" >
+		<ee:transform doc:name="Transform Message" doc:id="cc0edde2-abca-4674-80e2-78fc379c2923" >
+			<ee:message >
+				<ee:set-payload ><![CDATA[%dw 2.0
+output application/json
+---
+{
+    "compositeRequest": [
+       {
+        "method" : "PATCH",
+           "url" : "/services/data/v55.0/sobjects/Contact__c/" ++ payload.id,
+           "referenceId" : "contact",
+           "body" : 
+           { Phone__c: payload.Phone}  
+ 
+       }
+ 
+       
+]}]]></ee:set-payload>
+			</ee:message>
+		</ee:transform>
+		<flow-ref doc:name="Flow Reference" doc:id="e2e2343c-016c-424f-bd4a-d717be169537" name="requestComponent"/>
+		<ee:transform doc:name="Transform Message" doc:id="c6b01252-bb55-4639-989b-2fdfd8def128">
+			<ee:message>
+				<ee:set-payload><![CDATA[%dw 2.0
+output application/json
+---
+payload]]></ee:set-payload>
+			</ee:message>
+		</ee:transform>
+	</flow>
+	<flow name="requestComponent" doc:id="bf47659b-a571-47dd-985c-0e6a7f1b3191" >
+		<http:request method="PUT" doc:name="Request" doc:id="7065dd8f-8a8b-4de8-b10a-2816b5258dc3" url="${request.url}${request.endpoint}" />
+	</flow>
+	<flow name="GET-implementationFlow" doc:id="6c2e5abe-efb0-4563-bce6-51a49c02acdf" >
+		<ee:transform doc:name="Transform Message" doc:id="82b2f8c0-f115-4215-a1a7-75b351575008" >
+			<ee:message >
+				<ee:set-payload ><![CDATA[%dw 2.0
+output application/json
+---
+{
+	"compositeRequest": [{
+        "method" : "GET",
+           "url" : "/services/data/v55.0/sobjects/Contact__c",
+           "referenceId" : "contact" 
+    },
+{
+        "method" : "GET",
+           "url" : "/services/data/v55.0/sobjects/Account__c",
+           "referenceId" : "account"
+},
+{
+        "method" : "GET",
+           "url" : "/services/data/v55.0/sobjects/Billing_junction__c",
+           "referenceId" : "billing"}]}]]></ee:set-payload>
+			</ee:message>
+		</ee:transform>
+		<flow-ref doc:name="Flow Reference" doc:id="eae3c69c-6388-45be-a6f8-ca66063ac42a" name="requestComponent"/>
+		<ee:transform doc:name="Transform Message" doc:id="0720a3c0-088d-4fa3-8491-562212633045">
+			<ee:message>
+				<ee:set-payload><![CDATA[%dw 2.0
+output application/json
+---
+payload]]></ee:set-payload>
+			</ee:message>
+		</ee:transform>
+	</flow>
+</mule>

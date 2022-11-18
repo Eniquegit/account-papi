@@ -38,13 +38,6 @@
 
 	<dependencies>
 		<dependency>
-			<groupId>183c2f3b-99a5-48b9-9984-9874e22c6f71</groupId>
-			<artifactId>account_papi</artifactId>
-			<version>1.0.0</version>
-			<classifier>raml</classifier>
-			<type>zip</type>
-		</dependency>
-		<dependency>
 			<groupId>org.mule.modules</groupId>
 			<artifactId>mule-apikit-module</artifactId>
 			<version>1.7.3</version>
@@ -61,6 +54,13 @@
 			<artifactId>mule-sockets-connector</artifactId>
 			<version>1.2.3</version>
 			<classifier>mule-plugin</classifier>
+		</dependency>
+		<dependency>
+			<groupId>183c2f3b-99a5-48b9-9984-9874e22c6f71</groupId>
+			<artifactId>account_papi</artifactId>
+			<version>1.0.1</version>
+			<classifier>raml</classifier>
+			<type>zip</type>
 		</dependency>
 	</dependencies>
 
