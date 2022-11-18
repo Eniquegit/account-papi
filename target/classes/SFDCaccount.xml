@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<mule xmlns="http://www.mulesoft.org/schema/mule/core" xmlns:apikit="http://www.mulesoft.org/schema/mule/mule-apikit" xmlns:ee="http://www.mulesoft.org/schema/mule/ee/core" xmlns:http="http://www.mulesoft.org/schema/mule/http" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd http://www.mulesoft.org/schema/mule/mule-apikit http://www.mulesoft.org/schema/mule/mule-apikit/current/mule-apikit.xsd http://www.mulesoft.org/schema/mule/ee/core http://www.mulesoft.org/schema/mule/ee/core/current/mule-ee.xsd ">
+
+<mule xmlns="http://www.mulesoft.org/schema/mule/core" xmlns:apikit="http://www.mulesoft.org/schema/mule/mule-apikit" xmlns:doc="http://www.mulesoft.org/schema/mule/documentation" xmlns:ee="http://www.mulesoft.org/schema/mule/ee/core" xmlns:http="http://www.mulesoft.org/schema/mule/http" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd http://www.mulesoft.org/schema/mule/mule-apikit http://www.mulesoft.org/schema/mule/mule-apikit/current/mule-apikit.xsd http://www.mulesoft.org/schema/mule/ee/core http://www.mulesoft.org/schema/mule/ee/core/current/mule-ee.xsd ">
+
     <apikit:config name="SFDCaccount-config" api="SFDCaccount.raml" outboundHeadersMapName="outboundHeaders" httpStatusVarName="httpStatus" />
     <flow name="SFDCaccount-main">
         <http:listener config-ref="DBaccount_papi-httpListenerConfig" path="/api/*">
@@ -121,6 +123,7 @@ output application/json
         </error-handler>
     </flow>
     <flow name="put:\createcomposite:application\json:SFDCaccount-config">
+
         <ee:transform>
             <ee:message>
                 <ee:set-payload><![CDATA[%dw 2.0
@@ -262,5 +265,14 @@ output application/json
 }]]></ee:set-payload>
             </ee:message>
         </ee:transform>
+
+        <flow-ref doc:name="Flow Reference" doc:id="1ed17a3b-0e04-478d-ac6c-696b2fd04003" name="patch-implementationFlow" />
+    </flow>
+    <flow name="get:\createcomposite:SFDCaccount-config">
+		<flow-ref doc:name="Flow Reference" doc:id="cdfef319-0c54-449d-af10-edb3a280245b" name="Get-implementationFlow"/>
+    </flow>
+    <flow name="post:\createcomposite:application\json:SFDCaccount-config">
+		<flow-ref doc:name="Flow Reference" doc:id="44365f24-84e4-48ca-8145-107094724153" name="Post-implementationFlow"/>
+
     </flow>
 </mule>

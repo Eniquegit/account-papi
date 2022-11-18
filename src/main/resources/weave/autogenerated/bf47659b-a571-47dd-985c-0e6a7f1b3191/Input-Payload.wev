@@ -1,0 +1,6 @@
+%dw 2.0
+
+type auto_bf47659b_a571_47dd_985c_0e6a7f1b3191_Input_Payload = {|
+  compositeRequest: Array<{|    method: String,     url: Any,     referenceId: String,     body: {| Phone__c: Any |}  |} | {|    method: String,     url: Any,     referenceId: String,     body: {|      CurrencyIsoCode__c: String | Null,       QS_Bill_To_Email__c: Any    |}  |} | {|    method: String,     url: Any,     referenceId: String,     body: {| Integration_Status__c: Any |}  |}>
+|}
+
