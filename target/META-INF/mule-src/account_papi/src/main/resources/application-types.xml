@@ -1,4 +1,88 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <types:mule xmlns:types="http://www.mulesoft.org/schema/mule/types">
   <types:catalog/>
+  <types:enrichment select="#bf47659b-a571-47dd-985c-0e6a7f1b3191">
+    <types:processor-declaration>
+      <types:input-event>
+        <types:message>
+          <types:payload type="null"/>
+          <types:attributes type="null"/>
+        </types:message>
+        <types:variables>
+          <types:variable name="outboundHeaders" type="null"/>
+          <types:variable name="httpStatus" type="null"/>
+        </types:variables>
+      </types:input-event>
+      <types:output-event>
+        <types:message>
+          <types:payload type="null"/>
+          <types:attributes type="null"/>
+        </types:message>
+        <types:variables>
+          <types:variable name="outboundHeaders" type="null"/>
+          <types:variable name="httpStatus" type="null"/>
+        </types:variables>
+      </types:output-event>
+    </types:processor-declaration>
+  </types:enrichment>
+  <types:enrichment select="#55e15047-c6dd-4cd3-aed9-192592495a2d">
+    <types:processor-declaration>
+      <types:input-event>
+        <types:message>
+          <types:payload type="null"/>
+          <types:attributes type="null"/>
+        </types:message>
+      </types:input-event>
+      <types:output-event>
+        <types:message>
+          <types:payload type="null"/>
+          <types:attributes type="null"/>
+        </types:message>
+        <types:variables>
+          <types:variable name="outboundHeaders" type="null"/>
+          <types:variable name="httpStatus" type="null"/>
+        </types:variables>
+      </types:output-event>
+    </types:processor-declaration>
+  </types:enrichment>
+  <types:enrichment select="#6c2e5abe-efb0-4563-bce6-51a49c02acdf">
+    <types:processor-declaration>
+      <types:input-event>
+        <types:message>
+          <types:payload type="null"/>
+          <types:attributes type="null"/>
+        </types:message>
+      </types:input-event>
+      <types:output-event>
+        <types:message>
+          <types:payload type="null"/>
+          <types:attributes type="null"/>
+        </types:message>
+        <types:variables>
+          <types:variable name="outboundHeaders" type="null"/>
+          <types:variable name="httpStatus" type="null"/>
+        </types:variables>
+      </types:output-event>
+    </types:processor-declaration>
+  </types:enrichment>
+  <types:enrichment select="#79a6a2f0-b59e-4cfc-8c68-49740523168e">
+    <types:processor-declaration>
+      <types:input-event>
+        <types:message>
+          <types:payload type="null"/>
+          <types:attributes type="null"/>
+        </types:message>
+      </types:input-event>
+      <types:output-event>
+        <types:message>
+          <types:payload type="null"/>
+          <types:attributes type="null"/>
+        </types:message>
+        <types:variables>
+          <types:variable name="outboundHeaders" type="null"/>
+          <types:variable name="httpStatus" type="null"/>
+        </types:variables>
+      </types:output-event>
+    </types:processor-declaration>
+  </types:enrichment>
 </types:mule>
