@@ -4,8 +4,7 @@
 	xmlns:doc="http://www.mulesoft.org/schema/mule/documentation"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
 http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd">
-	<http:listener-config name="HTTP_Listener_config" doc:name="HTTP Listener config" doc:id="08b7b27b-e30e-4dc1-b8e2-36b15309f1d7" >
-		<http:listener-connection host="0.0.0.0" port="8081" />
-	</http:listener-config>
-	<configuration-properties doc:name="Configuration properties" doc:id="374b46e0-6f20-49c9-95dc-a57787ba7768" file="stagging.properties" />
+	<flow name="requestComponent" doc:id="8178d72f-e5e6-41ae-978b-1d88acb0076d" >
+		<http:request method="POST" doc:name="Request" doc:id="d7cca525-de7c-4692-b025-8c970681525f" url="${request.url}${request.endpoint}" />
+	</flow>
 </mule>

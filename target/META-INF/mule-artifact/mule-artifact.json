@@ -2,6 +2,7 @@
   "configs": [
     "account/sfdc-implementation.xml",
     "config.xml",
+    "subflows/requestMethod.xml",
     "SFDCaccount.xml",
     "DBaccount_papi.xml"
   ],
@@ -36,7 +37,8 @@
         "DBaccount_papi.xml",
         "log4j2.xml",
         "SFDCaccount.xml",
-        "stagging.properties"
+        "stagging.properties",
+        "subflows/requestMethod.xml"
       ]
     }
   },
