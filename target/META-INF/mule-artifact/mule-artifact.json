@@ -36,8 +36,10 @@
         "config.xml",
         "DBaccount_papi.xml",
         "log4j2.xml",
+        "resource.properties",
+        "sandbox.properties",
         "SFDCaccount.xml",
-        "stagging.properties",
+        "staging.properties",
         "subflows/requestMethod.xml"
       ]
     }

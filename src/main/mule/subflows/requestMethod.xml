@@ -4,7 +4,7 @@
 	xmlns:doc="http://www.mulesoft.org/schema/mule/documentation"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
 http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd">
-	<flow name="requestComponent" doc:id="8178d72f-e5e6-41ae-978b-1d88acb0076d" >
-		<http:request method="POST" doc:name="Request" doc:id="d7cca525-de7c-4692-b025-8c970681525f" url="${request.url}${request.endpoint}" />
+	<flow name="sfdcrequest" doc:id="8178d72f-e5e6-41ae-978b-1d88acb0076d" >
+		<http:request method="POST" doc:name="sfdcrequest" doc:id="d7cca525-de7c-4692-b025-8c970681525f" url="${sfdc.url}${sdfc.createaccount}" />
 	</flow>
 </mule>

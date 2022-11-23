@@ -37,7 +37,6 @@
 	</build>
 
 	<dependencies>
-		
 		<dependency>
 			<groupId>org.mule.modules</groupId>
 			<artifactId>mule-apikit-module</artifactId>
@@ -64,6 +63,12 @@
 			<classifier>raml</classifier>
 			<type>zip</type>
 
+		</dependency>
+		<dependency>
+			<groupId>c933ece6-762d-4f66-85c4-b200b39cceb2</groupId>
+			<artifactId>json-logger</artifactId>
+			<version>2.0.1</version>
+			<classifier>mule-plugin</classifier>
 		</dependency>
 	</dependencies>
 

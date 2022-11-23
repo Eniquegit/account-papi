@@ -7,5 +7,6 @@ http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/htt
 	<http:listener-config name="HTTP_Listener_config" doc:name="HTTP Listener config" doc:id="08b7b27b-e30e-4dc1-b8e2-36b15309f1d7" >
 		<http:listener-connection host="0.0.0.0" port="8081" />
 	</http:listener-config>
-	<configuration-properties doc:name="Configuration properties" doc:id="374b46e0-6f20-49c9-95dc-a57787ba7768" file="stagging.properties" />
+	<configuration-properties doc:name="Configuration properties" doc:id="374b46e0-6f20-49c9-95dc-a57787ba7768" file="${env}.properties" />
+	<configuration-properties doc:name="Configuration properties" doc:id="4ef426fa-b7f1-401a-a214-4f2c252032a7" file="resource.properties" />
 </mule>
